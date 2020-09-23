@@ -1,0 +1,37 @@
+<<<<<<< HEAD
+server.port: 8182
+spring.activiti:
+ check-process-definitions: true
+ #每次应用启动不检查Activiti数据表是否存在及版本号是否匹配，提升应用启动速度
+ database-schema-update: true
+ #保存历史数据级别设置为full最高级别，便于历史数据的追溯
+ history-level: full
+ db-history-used: true
+
+
+spring:
+ profiles:
+    active: h2
+ activiti.history-level: full
+ datasource:
+    url: jdbc:mysql://10.148.224.4:3306/budget?nullCatalogMeansCurrent=true&characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root@123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+ jpa: 
+  database: MYSQL
+  properties: 
+   hibernate: 
+    dialect: org.hibernate.dialect.MySQL5Dialect
+  hibernate: 
+   ddl-auto: create
+  jpa:
+    show-sql: true
+=======
+server.port: 8181
+#spring.activiti.check-process-definitions: false
+#每次应用启动不检查Activiti数据表是否存在及版本号是否匹配，提升应用启动速度
+#spring.activiti.database-schema-update: false
+#保存历史数据级别设置为full最高级别，便于历史数据的追溯
+spring.activiti.history-level: full
+>>>>>>> 6b5f00b783b940a8a7d8952004aaa395719ffcb0
